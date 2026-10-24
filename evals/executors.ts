@@ -9,7 +9,20 @@ import type {
 } from "./types.ts";
 import { buildMessages } from "./utils.ts";
 
+/**
+ * !!!!
+ * This file contains single turn executer, which nothing but dummy agent runner.
+ * which accepts mock tools as args, calls real models and verifies toolcalls
+ * Its a common function that be use across different evals
+ * !!!!
+ * */
 const MODEL_NAME = "gpt-5-mini";
+
+/**
+ * !!!!
+ * All tool definations, this is created from real tools list but wihtout execute method
+ * !!!!
+ * */
 const TOOL_DEFINATION: ToolSet = {
   readFile: {
     description: "use this to read the conents of a file at specified path",
